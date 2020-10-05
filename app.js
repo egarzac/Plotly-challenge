@@ -25,7 +25,15 @@ function bringMetadata(sample) {
   var age = metadata[0].age;
   var location = metadata[0].location;
   console.log(id, ethnicity, gender, age, location);
+
+//Select section to show demographics in html
+  var list = d3.select("#sample-metadata");
+// remove any children from the list to
+  list.html("");
+  //Insert results in summary section
+  list.html(`id: ${id}, ethnicity: ${ethnicity}, Gender: ${gender}, Age: ${age}, Location: ${location}`);
 }
+
 
 //Variables for Bar Chart - STATIC
 function buildBarChart(sample) {
